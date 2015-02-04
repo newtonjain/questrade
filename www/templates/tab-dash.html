@@ -1,0 +1,45 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+
+
+
+
+    <div class="list card">
+      <div class="item item-divider">New Contact Form</div>
+      <div class="item item-body">
+              <div class="list-group-item">
+
+          <div class="form-group">
+  
+            <p><label for="name">name: </label> <input id="name" class="form-control" type="text" ng-model="name"> </p>
+            <p><label for="email">email:</label> <input id="email" class="form-control" type="text" ng-model="email"> </p>
+            <p><label for="phone">phone:</label> <input id="phone" class="form-control" type="text" ng-model="phone"> </p>
+            <p><label for="address">Address:</label> <input id="address" class="form-control" type="text" ng-model="address"> </p>
+            
+          </div>
+        
+          <a ng-click="addContact(name,email,phone,address)">
+            <button class="btn btn-default">
+             <span class="glyphicon glyphicon-ok"></span>
+             <span> Add</span>
+            </button>
+          </a>
+
+        <!--   <a ng-if="path !== '/add'" ng-href="#/contact-info/{{index}}">
+            <button class="btn btn-default">
+             <span class="glyphicon glyphicon-ok"></span>
+             <span> Save Edits</span>
+            </button>
+          </a> -->
+
+          <a href="#/">
+            <button class="btn btn-default">
+              <span class="glyphicon glyphicon-remove"></span><span>  Cancel</span>
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+ 
+  </ion-content>
+</ion-view>
