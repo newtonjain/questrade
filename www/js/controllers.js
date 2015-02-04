@@ -26,18 +26,17 @@ $scope.contacts= Contacts.all();
 })
 
 .controller('ContactDetailCtrl', function($scope, $stateParams, Contacts, ngDialog) {
-  // alert("in contacts");
   $scope.contact = Contacts.get($stateParams.contactId);
-
+  $scope.editing = false;
   $scope.remove = function(contact) {
     //alert(JSON.stringify(contact));
     Contacts.remove(contact);
 
     ngDialog.open({
-                      template: 'Contact Removed',
+                template: 'Contact Removed',
                 scope: $scope,
                 plain:true,
-                      className: 'ngdialog-theme-plain'
+                className: 'ngdialog-theme-plain'
 
       });
   }
