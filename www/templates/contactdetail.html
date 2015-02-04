@@ -10,22 +10,29 @@
   <div ng-hide='editing'>
   	<div class="list card">
   		<div class="item item-body">
-        <p>email: <a ng-href="{{currentContact.email}}">{{contact.email}}</a></p>
-        <p>phone: {{contact.phone}}</p>
-        <p>url: <a ng-href="{{contact.url}}">{{contact.url}}</a></p>
-        <p>Notes:</p>
-        <p class="well well-lg">{{contact.notes}}</p>
-  
+  			<img src="{{contact.url}}" class="headshot" />
 
+  			 <p align="center"><b>email</b>
+				<br>{{contact.email}}
+			</p>
+       
+	       <p align="center"><b>Phone number</b>
+	       	<br>{{contact.phone}}
+	       </p>
 
-          <button class="btn btn-default" ng-click="editing=true">
+	         <p align="center"><b>Address</b>
+	         		<br>{{contact.address}}
+	         </p>
+
+          <center><button class="btn btn-default" ng-click="editing=true">
             <span class="glyphicon glyphicon-pencil"></span><span> - Edit</span>
           </button>
        
 
-        <a href="#/tab/contacts"><button class="btn btn-default" ng-click="remove(contact)">
+        <a href="#/tab/contacts"><button class="btn btn-danger" ng-click="remove(contact)">
           <span class="glyphicon glyphicon-remove"></span><span> - Remove</span>
         </button></a>
+        </center>
     </div>
  </div>
  </div>
@@ -43,8 +50,8 @@
             
           </div>
 
-<button class="btn btn-default" ng-click="editing=false">
-            <span class="glyphicon glyphicon-pencil"></span><span> - Save Changes</span>
+<button class="btn btn-success" ng-click="editing=false">
+            <span class="glyphicon glyphicon-ok"></span><span> - Save Changes</span>
           </button>
 
 </div>

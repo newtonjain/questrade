@@ -6,11 +6,12 @@
 
   </div>
   <ion-content class="has-subheader">
+  <button ng-click="test()">test</button>
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="contact in contacts | filter: searchText" type="item-text-wrap" href="#/tab/contacts/{{contact.id}}">
         <img ng-src="{{contact.url}}">
         <h2>{{contact.name}}</h2>
-        <p>{{contact.id}}</p>
+        <p>{{contact.phone}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
 
         <ion-option-button class="button-assertive" ng-click="remove(contact)">

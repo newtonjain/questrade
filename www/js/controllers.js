@@ -1,19 +1,45 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, Contacts,  $state) {
+.controller('DashCtrl', function($scope, Contacts,  $state, ngDialog) {
 $scope.contacts= Contacts.all();
-  $scope.addContact = function (name,email,phone,address) {
-    var contact = {name,email,phone,address};
-//    alert("2" + JSON.stringify(contact));
-    contact.id = $scope.contacts.length;
-    $scope.contacts.push(contact);
+$scope.newContact={};
+  $scope.addContact = function () {
+    if($scope.newContact.name){
+     //alert("2iii" + $scope.contacts.length);
+     //alert("22ii" +JSON.stringify($scope.contacts[$scope.contacts.length-1]));
+    $scope.newContact.id = $scope.contacts[$scope.contacts.length-1].id+1;
+    $scope.newContact.url = 'img/profilepic2.png';
+    //alert("3ii" + JSON.stringify($scope.newContact));
+    $scope.contacts.push($scope.newContact);
+    $scope.newContact={};
     $state.go('tab.contacts');
-  };
+  }
+  else{
+
+     ngDialog.open({
+                template: 'Contact Name is required.',
+                scope: $scope,
+                plain:true,
+                className: 'ngdialog-theme-plain'
+
+      });
+
+  }
+  }
+
+  $scope.resetForm = function(){
+     $scope.newContact={};
+  }
 
 })
 
 .controller('ContactsCtrl', function($scope, Contacts,  $state) {
   $scope.contacts= Contacts.all();
+  $scope.test = function(){
+    var test = Contacts.all();
+    alert(JSON.stringify(test));
+  }
+  
   $scope.remove = function(contact) {
     Contacts.remove(contact);
   }
