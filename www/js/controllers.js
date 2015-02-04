@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, Contacts,  $state, ngDialog) {
+.controller('AddUserCtrl', function($scope, Contacts,  $state, ngDialog) {
 $scope.contacts= Contacts.all();
 $scope.newContact={};
   $scope.addContact = function () {
