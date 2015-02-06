@@ -1,0 +1,24 @@
+<ion-view view-title="Contact List">
+    <div class="bar bar-subheader item-input-inset">
+        <label class="item-input-wrapper"> <i class="icon ion-ios7-search placeholder-icon"></i>
+            <input type="search" placeholder="Search" ng-model="searchText">
+        </label>
+
+    </div>
+    <ion-content class="has-subheader">
+        <!--  <button ng-click="test()">test</button> -->
+        <ion-list>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="contact in contacts | filter: searchText | orderBy: orderList" type="item-text-wrap">
+                <img ng-src="{{contact.url}}">
+                <h2>{{contact.name}}</h2>
+                <p>{{contact.phone}}</p>
+                <a href="#/tab/contacts/{{contact.id}}">
+                    <i class="icon ion-chevron-right icon-accessory"></i>
+                </a>
+                <ion-option-button class="button-assertive" ng-click="remove(contact)">
+                    Delete
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
