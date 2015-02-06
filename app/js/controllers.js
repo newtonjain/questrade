@@ -30,7 +30,7 @@ $scope.contacts = Contacts.all();
             if ($scope.newContact.name) {
             //alert("2iii" + $scope.contacts.length);
             //alert("22ii" +JSON.stringify($scope.contacts[$scope.contacts.length-1]));
-            $scope.newContact.id = $scope.contacts[$scope.contacts.length - 1].id + 1;
+            $scope.newContact.id = ($scope.contacts.length > 0 ? ($scope.contacts[$scope.contacts.length - 1].id + 1):(0));
             $scope.newContact.url = 'img/profilepic2.png';
             //alert("3ii" + JSON.stringify($scope.newContact));
             $scope.contacts.push($scope.newContact);
