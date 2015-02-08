@@ -9,7 +9,7 @@ This project is generated with [yo angular generator].
 
 ## Build & development
 
-Run `grunt` for building and `grunt serve` for preview that will start a connect web server on http://localhost:9000.
+Run `grunt` for building and `grunt serve` to preview the application that will start a connect web server on http://localhost:9000.
 
 ## Testing
 
