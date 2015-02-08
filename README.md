@@ -6,8 +6,12 @@ The application has 2 main tabs. The existing list of contacts is rendered under
 
 This project is generated with [yo angular generator]. 
 
+##Dependencies:
+To install dependencies: 
+1) npm install grunt-cli
+2) npm install 
 
-## Build & development
+## Development
 
 Run `grunt` for building and `grunt serve` to preview the application that will start a connect web server on http://localhost:9000.
 
@@ -15,5 +19,5 @@ Run `grunt` for building and `grunt serve` to preview the application that will 
 
 Running `grunt test` will run the unit tests with karma.
 
-sudo npm install -g
-bower install
+or navigate to the test folder (cd test) and type 'karma start'. 
+
