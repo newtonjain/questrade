@@ -4,9 +4,11 @@
 (function () {
 
 ////////////////////////////////////////////////////////////////////////
-
-
-//////////////////////////////////////////
+//Unit test for adding a new contact. Three cases are tested here 
+//1) When a unique name is entered.
+//2) When a unique name is not entered and a new entry is not created.
+//3) When a duplicate name is entered and a new entry is not created.
+////////////////////////////////////////////////////////////////////////
 describe('AddUserCtrl', function() {
  
   beforeEach(angular.mock.module('starter.controllers'));
@@ -79,7 +81,7 @@ describe('AddUserCtrl', function() {
     });
 
   //In this case if the same name is enetered twice then the 
-  //second function call should not increment the contact list.
+  //second function call should not increment the contact list again.
     it('Same name is entered twice', function() {
       var len = $scope.contacts.length;
 
@@ -92,7 +94,12 @@ describe('AddUserCtrl', function() {
   });
 
 });
-///////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////
+//Unit test for removing a contact. Two cases are tested here 
+//1) Contact to be deleted exists in the contact list.
+//2) Contact to be deleted does not exists in the contact list.
+////////////////////////////////////////////////////////////////////////
 describe('ContactsCtrl', function() {
  
   beforeEach(angular.mock.module('starter.controllers'));
@@ -121,19 +128,21 @@ describe('ContactsCtrl', function() {
 
   }));
 
-    it('Contact to be deleted', function() {
+    it('Contact to be deleted exists in the contact list.', function() {
       var len = $scope.contacts.length;
-     console.log($scope.contacts.length);
-      $scope.remove($scope.contacts[1]);
-      console.log($scope.contacts.length);
+      $scope.remove($scope.contacts[0]);
       expect($scope.contacts.length).toEqual(len-1);
     });
 
+    it('Contact to be deleted does not exist in the contact list.', function() {
+      var len = $scope.contacts.length;
+      $scope.remove($scope.contacts[5]);
+      expect($scope.contacts.length).toEqual(len);
+    });
 
   });
 
 });
 
-///////////////////////////////////////////////
 })();
 

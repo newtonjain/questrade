@@ -1,3 +1,5 @@
+<!-- This page shows the list of contacts under the contacts tab. The list is updated from $scope.contacts in the Contacts Controller. Two filters are used on the rendered list to perform incremental search opetaion and order the list in alphabetical order. Associated controler is: ContactsCtrl -->
+
 <ion-view view-title="Contact List">
     <div class="bar bar-subheader item-input-inset">
         <label class="item-input-wrapper"> <i class="icon ion-ios7-search placeholder-icon"></i>
@@ -6,7 +8,7 @@
 
     </div>
     <ion-content class="has-subheader">
-        <!--  <button ng-click="test()">test</button> -->
+         <!-- <button ng-click="test()">test</button> -->
         <ion-list>
             <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="contact in contacts | filter: searchText | orderBy: orderList" type="item-text-wrap">
                 <img ng-src="{{contact.url}}">
